@@ -1,2 +1,32 @@
-# DA-PM
-Part-of-speech weighted multi-modal emotion analysis model with dynamic adjustment of semantic representation
+# DA-PM: 动态调整语义的词性加权多模态情感分析模型
+
+##项目介绍
+针对多模态情感分析任务，我们提出了动态调整语义的词性加权多模态情感分析模型(DA-PM),模型以自然语言文本模态为主体,使用动态调整语义模块融合自然语言和非自然语言信息,使用词性加权模块对融合后的向量按词性给与不同的权重,最后经过多层全连接神经网络得到情感值.模型还分别使用BERT,XLNet和RoBERTa预训练语言模型为文本模态进行词嵌入编码,其中DA-PM(RoBERTa)在多模态情感分析任务两个公共数据集CMU-MOSI和CMU-MOSEI上均取得了最好性能.
+
+##环境部署
+requirements.txt中提供了所有项目所需的包以及对应的版本，可执行以下命令：
+```
+pip install-r requirements.txt
+```
+
+
+##数据集
+论文中处理好的CMU-MOSI和CMU-MOSEI数据集可以在链接：https://pan.baidu.com/s/1WdrgLq9Rei-4zBDslw2uLA
+下载，提取码：czcz，请将下载好的文件放入data文件夹下。
+
+
+##最优结果
+
+|           Metric          | ACC-2 | F1   | MAE  | Corr  |
+| ------------------------- |:-----:| :---:|-----:| :----:|
+| CMU-MOSI数据集中DA-PM结果  | 89.02 | 89.01| 0.607| 0.847 |
+| CMU-MOSEI数据集中DA-PM结果 | 86.93 | 86.86| 0.510| 0.800 |
+
+##运行
+运行以下命令就可启动模型训练过程
+```
+python main.py
+```
+
+
+
